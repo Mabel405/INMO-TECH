@@ -1,4 +1,6 @@
-export const fadeIn = () => {
+import { Variants } from "framer-motion";
+
+export const fadeIn = (): Variants => {
   return {
     hidden: {
       y: 100,
