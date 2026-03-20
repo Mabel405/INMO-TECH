@@ -1,9 +1,10 @@
 import { use, useEffect, useState } from "react"
 import { dataHeader } from "../Header/Header.data"
 import { NavbarProps } from "./Navbar.types"
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import {motion} from 'framer-motion'
+
 
 export function Navbar(props: NavbarProps) {
     const{ openMobileMenu } = props;
@@ -52,24 +53,22 @@ export function Navbar(props: NavbarProps) {
     )
 }
 
-const animationNavbar = {
+const animationNavbar: Variants = {
     initial: {
         y: -20,
-        opacity:0
+        opacity: 0
     },
     animate: {
-        y:0,
+        y: 0,
         opacity: 1,
         transition: {
-            stiffnes: 100,
+            stiffness: 100,
             damping: 20,
             type: "spring"
-
         }
     },
     exit: {
         y: -20,
-        opactity: 0
+        opacity: 0
     }
-
 }
